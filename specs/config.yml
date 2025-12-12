@@ -1,0 +1,133 @@
+provider:
+  name: github
+
+data_sources:
+  app_group:
+    read:
+      path: /apps/github.eda.nokia.com
+      method: GET
+
+  create_github_issue:
+    read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}
+      method: GET
+
+  create_github_issue_list:
+    read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues
+      method: GET
+
+  git_hub_action:
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: GET
+
+  git_hub_action_list:
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions
+      method: GET
+
+  git_hub_instance:
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: GET
+
+  git_hub_instance_list:
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances
+      method: GET
+
+  git_hub_issue:
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: GET
+
+  git_hub_issue_list:
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues
+      method: GET
+
+  resource_list:
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1
+      method: GET
+
+  run_github_workflow:
+    read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows/{name}
+      method: GET
+
+  run_github_workflow_list:
+    read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows
+      method: GET
+
+  workflow_get_inputs_resp_elem:
+    read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}/_input
+      method: GET
+
+resources:
+  create_github_issue:
+    create:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues
+      method: POST
+    read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}
+      method: GET
+    delete:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}
+      method: DELETE
+
+  git_hub_action:
+    create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions
+      method: POST
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: GET
+    update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: PUT
+    delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: DELETE
+
+  git_hub_instance:
+    create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances
+      method: POST
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: GET
+    update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: PUT
+    delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: DELETE
+
+  git_hub_issue:
+    create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues
+      method: POST
+    read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: GET
+    update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: PUT
+    delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: DELETE
+
+  run_github_workflow:
+    create:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows
+      method: POST
+    read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows/{name}
+      method: GET
+    delete:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows/{name}
+      method: DELETE

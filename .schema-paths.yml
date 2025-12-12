@@ -1,0 +1,273 @@
+app_group:
+  - read:
+      path: /apps/github.eda.nokia.com
+      method: GET
+
+intent_targets:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}/_targets
+      method: GET
+
+k8_s_topology_request:
+  - create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}/_topology
+      method: POST
+
+patch:
+  - update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: PATCH
+  - update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: PATCH
+  - update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: PATCH
+
+resource_history:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}/_revs
+      method: GET
+
+resource_list:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1
+      method: GET
+
+resource_topology:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}/_topology
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}/_topology
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}/_topology
+      method: GET
+
+status:
+  - delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: DELETE
+  - delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: DELETE
+  - delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: DELETE
+
+ui_result:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/_ui/{pathname}
+      method: GET
+
+workflow_get_inputs_resp_elem:
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}/_input
+      method: GET
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows/{name}/_input
+      method: GET
+
+workflow_input_data:
+  - update:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}/_input
+      method: PUT
+  - update:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows/{name}/_input
+      method: PUT
+
+com.nokia.eda.github.v1alpha1.create_github_issue:
+  - create:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues
+      method: POST
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}
+      method: GET
+
+com.nokia.eda.github.v1alpha1.create_github_issue_list:
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/creategithubissues
+      method: GET
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues
+      method: GET
+
+com.nokia.eda.github.v1alpha1.git_hub_action:
+  - create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions
+      method: POST
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: GET
+  - update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+      method: PUT
+
+com.nokia.eda.github.v1alpha1.git_hub_action_list:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/githubactions
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions
+      method: GET
+  - delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions
+      method: DELETE
+
+com.nokia.eda.github.v1alpha1.git_hub_action_deleted_resources:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/_deleted
+      method: GET
+
+com.nokia.eda.github.v1alpha1.git_hub_instance:
+  - create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances
+      method: POST
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: GET
+  - update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+      method: PUT
+
+com.nokia.eda.github.v1alpha1.git_hub_instance_list:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/githubinstances
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances
+      method: GET
+  - delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances
+      method: DELETE
+
+com.nokia.eda.github.v1alpha1.git_hub_instance_deleted_resources:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/_deleted
+      method: GET
+
+com.nokia.eda.github.v1alpha1.git_hub_issue:
+  - create:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues
+      method: POST
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: GET
+  - update:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+      method: PUT
+
+com.nokia.eda.github.v1alpha1.git_hub_issue_list:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/githubissues
+      method: GET
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues
+      method: GET
+  - delete:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues
+      method: DELETE
+
+com.nokia.eda.github.v1alpha1.git_hub_issue_deleted_resources:
+  - read:
+      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/_deleted
+      method: GET
+
+com.nokia.eda.github.v1alpha1.run_github_workflow:
+  - create:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows
+      method: POST
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows/{name}
+      method: GET
+
+com.nokia.eda.github.v1alpha1.run_github_workflow_list:
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows
+      method: GET
+  - read:
+      path: /workflows/v1/github.eda.nokia.com/v1alpha1/rungithubworkflows
+      method: GET
+
+totalPaths: 40
+totalSchemas: 82
+usedSchemas: 24
+unusedSchemas: 58
+unusedSchemaList:
+  - AppGroupVersion
+  - ErrorIndex
+  - ErrorItem
+  - ErrorResponse
+  - IntentTarget
+  - K8SPatchOp
+  - OverlayState
+  - Resource
+  - ResourceHistoryEntry
+  - StatusDetails
+  - TopoAttrMetadata
+  - TopoAttribute
+  - TopoBoolExpression
+  - TopoBoolLiteral
+  - TopoElemMetadata
+  - TopoEndpointBoolExpression
+  - TopoField
+  - TopoFixedBoolExpression
+  - TopoLabelSelector
+  - TopoLiteralStatusOrBadge
+  - TopoLiteralValue
+  - TopoLogicalExpression
+  - TopoNodeGrouping
+  - TopoOverlayEndpoint
+  - TopoOverlayEndpointState
+  - TopoOverlayLink
+  - TopoOverlayLinkGroup
+  - TopoOverlayLinkGroupEndpoint
+  - TopoOverlayLinkState
+  - TopoOverlayNode
+  - TopoOverlayNodeOrGroup
+  - TopoOverlayNodeState
+  - TopoOverlayValue
+  - TopoSchema
+  - TopoStateFilter
+  - TopoValue
+  - TopoValueExpression
+  - Topology
+  - WorkflowIdentifier
+  - WorkflowInputDataElem
+  - com.nokia.eda.github.v1alpha1.CreateGithubIssue_alarms
+  - com.nokia.eda.github.v1alpha1.CreateGithubIssue_deviations
+  - com.nokia.eda.github.v1alpha1.CreateGithubIssue_metadata
+  - com.nokia.eda.github.v1alpha1.GitHubAction_DeletedResourceEntry
+  - com.nokia.eda.github.v1alpha1.GitHubAction_alarms
+  - com.nokia.eda.github.v1alpha1.GitHubAction_deviations
+  - com.nokia.eda.github.v1alpha1.GitHubAction_metadata
+  - com.nokia.eda.github.v1alpha1.GitHubInstance_DeletedResourceEntry
+  - com.nokia.eda.github.v1alpha1.GitHubInstance_alarms
+  - com.nokia.eda.github.v1alpha1.GitHubInstance_deviations
+  - com.nokia.eda.github.v1alpha1.GitHubInstance_metadata
+  - com.nokia.eda.github.v1alpha1.GitHubIssue_DeletedResourceEntry
+  - com.nokia.eda.github.v1alpha1.GitHubIssue_alarms
+  - com.nokia.eda.github.v1alpha1.GitHubIssue_deviations
+  - com.nokia.eda.github.v1alpha1.GitHubIssue_metadata
+  - com.nokia.eda.github.v1alpha1.RunGithubWorkflow_alarms
+  - com.nokia.eda.github.v1alpha1.RunGithubWorkflow_deviations
+  - com.nokia.eda.github.v1alpha1.RunGithubWorkflow_metadata
