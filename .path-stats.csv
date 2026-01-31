@@ -11,7 +11,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/_deleted,GET,com.nokia.eda.github.v1alpha1.GitHubAction_DeletedResources,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name},DELETE,Status,git_hub_action,true,false,true
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name},GET,com.nokia.eda.github.v1alpha1.GitHubAction,git_hub_action,true,true,true
-/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name},PATCH,Patch,,false,false,false
+/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name},PATCH,com.nokia.eda.github.v1alpha1.GitHubAction,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name},PUT,com.nokia.eda.github.v1alpha1.GitHubAction,git_hub_action,true,false,true
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}/_targets,GET,IntentTargets,,false,false,false
@@ -23,7 +23,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/_deleted,GET,com.nokia.eda.github.v1alpha1.GitHubInstance_DeletedResources,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name},DELETE,Status,git_hub_instance,true,false,true
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name},GET,com.nokia.eda.github.v1alpha1.GitHubInstance,git_hub_instance,true,true,true
-/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name},PATCH,Patch,,false,false,false
+/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name},PATCH,com.nokia.eda.github.v1alpha1.GitHubInstance,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name},PUT,com.nokia.eda.github.v1alpha1.GitHubInstance,git_hub_instance,true,false,true
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}/_targets,GET,IntentTargets,,false,false,false
@@ -35,7 +35,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/_deleted,GET,com.nokia.eda.github.v1alpha1.GitHubIssue_DeletedResources,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name},DELETE,Status,git_hub_issue,true,false,true
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name},GET,com.nokia.eda.github.v1alpha1.GitHubIssue,git_hub_issue,true,true,true
-/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name},PATCH,Patch,,false,false,false
+/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name},PATCH,com.nokia.eda.github.v1alpha1.GitHubIssue,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name},PUT,com.nokia.eda.github.v1alpha1.GitHubIssue,git_hub_issue,true,false,true
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}/_targets,GET,IntentTargets,,false,false,false
