@@ -252,12 +252,6 @@ func (p *githubProvider) Metadata(ctx context.Context, req provider.MetadataRequ
 func (p *githubProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
 	return []func() datasource.DataSource{
 		NewAppGroupDataSource,
-		NewClusterGitHubActionDataSource,
-		NewClusterGitHubActionListDataSource,
-		NewClusterGitHubInstanceDataSource,
-		NewClusterGitHubInstanceListDataSource,
-		NewClusterGitHubIssueDataSource,
-		NewClusterGitHubIssueListDataSource,
 		NewCreateGithubIssueDataSource,
 		NewCreateGithubIssueListDataSource,
 		NewGitHubActionDataSource,
@@ -275,9 +269,6 @@ func (p *githubProvider) DataSources(ctx context.Context) []func() datasource.Da
 
 func (p *githubProvider) Resources(ctx context.Context) []func() resource.Resource {
 	return []func() resource.Resource{
-		NewClusterGitHubActionResource,
-		NewClusterGitHubInstanceResource,
-		NewClusterGitHubIssueResource,
 		NewCreateGithubIssueResource,
 		NewGitHubActionResource,
 		NewGitHubInstanceResource,

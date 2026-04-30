@@ -23,7 +23,7 @@ description: |-
 
 - `fields` (String) a comma-separated list of resource fields to fetch/return.  If unspecified, all fields are fetched.  If empty, only key-fields are fetched.
 - `filter` (String) an EQL "where" expression that will be used to filter the set of resources returned.
-- `label_selector` (String) A label selector string to filter the results based on resource labels. If specified multiple times, the union of resources which satisfy a label-selector will be returned.
+- `label_selector` (String) a label selector string to filter the results based on CR labels
 - `labelselector` (String) Deprecated: a label selector string to filter the results based on CR labels
 
 ### Read-Only
@@ -53,22 +53,22 @@ Read-Only:
 
 Optional:
 
-- `close_on_resolve` (Boolean) Close the issue on resolve.
+- `close_on_resolve` (Boolean)
 - `instance` (String) Github instance name.
-- `issue` (Attributes) Issue to create. (see [below for nested schema](#nestedatt--items--spec--issue))
-- `repo` (String) Repository to create the issue.
-- `trigger` (Attributes) Trigger conditions to create the issue. (see [below for nested schema](#nestedatt--items--spec--trigger))
+- `issue` (Attributes) (see [below for nested schema](#nestedatt--items--spec--issue))
+- `repo` (String)
+- `trigger` (Attributes) (see [below for nested schema](#nestedatt--items--spec--trigger))
 
 <a id="nestedatt--items--spec--issue"></a>
 ### Nested Schema for `items.spec.issue`
 
 Optional:
 
-- `assignees` (List of String) Assignees of the issue.
-- `body` (String) Body of the issue.
-- `labels` (List of String) Labels of the issue.
-- `milestone` (String) Milestone of the issue.
-- `title` (String) Title of the issue.
+- `assignees` (List of String)
+- `body` (String)
+- `labels` (List of String)
+- `milestone` (String)
+- `title` (String)
 
 
 <a id="nestedatt--items--spec--trigger"></a>
@@ -76,8 +76,8 @@ Optional:
 
 Optional:
 
-- `alarm` (Attributes) Alarm to trigger the workflow (see [below for nested schema](#nestedatt--items--spec--trigger--alarm))
-- `query` (Attributes) Query to trigger the workflow (see [below for nested schema](#nestedatt--items--spec--trigger--query))
+- `alarm` (Attributes) (see [below for nested schema](#nestedatt--items--spec--trigger--alarm))
+- `query` (Attributes) (see [below for nested schema](#nestedatt--items--spec--trigger--query))
 
 <a id="nestedatt--items--spec--trigger--alarm"></a>
 ### Nested Schema for `items.spec.trigger.alarm`
@@ -132,3 +132,35 @@ Read-Only:
 
 <a id="nestedatt--items--status"></a>
 ### Nested Schema for `items.status`
+
+Read-Only:
+
+- `conditions` (Attributes List) conditions represent the current state of the GitHubIssue resource.
+Each condition has a unique type and reflects the status of a specific aspect of the resource.
+
+Standard condition types include:
+- "Available": the resource is fully functional
+- "Progressing": the resource is being created or updated
+- "Degraded": the resource failed to reach or maintain its desired state
+
+The status of each condition is one of True, False, or Unknown. (see [below for nested schema](#nestedatt--items--status--conditions))
+
+<a id="nestedatt--items--status--conditions"></a>
+### Nested Schema for `items.status.conditions`
+
+Read-Only:
+
+- `last_transition_time` (String) lastTransitionTime is the last time the condition transitioned from one status to another.
+This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.
+- `message` (String) message is a human readable message indicating details about the transition.
+This may be an empty string.
+- `observed_generation` (Number) observedGeneration represents the .metadata.generation that the condition was set based upon.
+For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+with respect to the current state of the instance.
+- `reason` (String) reason contains a programmatic identifier indicating the reason for the condition's last transition.
+Producers of specific condition types may define expected values and meanings for this field,
+and whether the values are considered a guaranteed API.
+The value should be a CamelCase string.
+This field may not be empty.
+- `status` (String) status of the condition, one of True, False, Unknown.
+- `type` (String) type of condition in CamelCase or in foo.example.com/CamelCase.

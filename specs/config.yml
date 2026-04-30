@@ -7,36 +7,6 @@ data_sources:
       path: /apps/github.eda.nokia.com
       method: GET
 
-  cluster_git_hub_action:
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions/{name}
-      method: GET
-
-  cluster_git_hub_action_list:
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions
-      method: GET
-
-  cluster_git_hub_instance:
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubinstances/{name}
-      method: GET
-
-  cluster_git_hub_instance_list:
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubinstances
-      method: GET
-
-  cluster_git_hub_issue:
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubissues/{name}
-      method: GET
-
-  cluster_git_hub_issue_list:
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubissues
-      method: GET
-
   create_github_issue:
     read:
       path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}
@@ -98,48 +68,6 @@ data_sources:
       method: GET
 
 resources:
-  cluster_git_hub_action:
-    create:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions
-      method: POST
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions/{name}
-      method: GET
-    update:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions/{name}
-      method: PUT
-    delete:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions/{name}
-      method: DELETE
-
-  cluster_git_hub_instance:
-    create:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubinstances
-      method: POST
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubinstances/{name}
-      method: GET
-    update:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubinstances/{name}
-      method: PUT
-    delete:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubinstances/{name}
-      method: DELETE
-
-  cluster_git_hub_issue:
-    create:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubissues
-      method: POST
-    read:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubissues/{name}
-      method: GET
-    update:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubissues/{name}
-      method: PUT
-    delete:
-      path: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubissues/{name}
-      method: DELETE
-
   create_github_issue:
     create:
       path: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues
