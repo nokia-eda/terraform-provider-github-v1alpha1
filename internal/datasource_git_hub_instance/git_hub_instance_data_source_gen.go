@@ -103,20 +103,20 @@ func GitHubInstanceDataSourceSchema(ctx context.Context) schema.Schema {
 				Attributes: map[string]schema.Attribute{
 					"api_base_url": schema.StringAttribute{
 						Optional:            true,
-						Description:         "Base URL for the Github API.",
-						MarkdownDescription: "Base URL for the Github API.",
+						Description:         "Base URL for the Github API. Leave empty for the public Github API base URL.",
+						MarkdownDescription: "Base URL for the Github API. Leave empty for the public Github API base URL.",
 					},
 					"auth_secret_ref": schema.SingleNestedAttribute{
 						Attributes: map[string]schema.Attribute{
 							"key": schema.StringAttribute{
 								Optional:            true,
-								Description:         "Key of the secret",
-								MarkdownDescription: "Key of the secret",
+								Description:         "Credentials key in the secret.",
+								MarkdownDescription: "Credentials key in the secret.",
 							},
 							"name": schema.StringAttribute{
 								Optional:            true,
-								Description:         "Name of the secret",
-								MarkdownDescription: "Name of the secret",
+								Description:         "Secret Name containing the credentials.",
+								MarkdownDescription: "Secret Name containing the credentials.",
 							},
 						},
 						CustomType: AuthSecretRefType{
@@ -140,49 +140,20 @@ func GitHubInstanceDataSourceSchema(ctx context.Context) schema.Schema {
 			},
 			"status": schema.SingleNestedAttribute{
 				Attributes: map[string]schema.Attribute{
-					"conditions": schema.ListNestedAttribute{
-						NestedObject: schema.NestedAttributeObject{
-							Attributes: map[string]schema.Attribute{
-								"last_transition_time": schema.StringAttribute{
-									Computed:            true,
-									Description:         "lastTransitionTime is the last time the condition transitioned from one status to another.\nThis should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.",
-									MarkdownDescription: "lastTransitionTime is the last time the condition transitioned from one status to another.\nThis should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.",
-								},
-								"message": schema.StringAttribute{
-									Computed:            true,
-									Description:         "message is a human readable message indicating details about the transition.\nThis may be an empty string.",
-									MarkdownDescription: "message is a human readable message indicating details about the transition.\nThis may be an empty string.",
-								},
-								"observed_generation": schema.Int64Attribute{
-									Computed:            true,
-									Description:         "observedGeneration represents the .metadata.generation that the condition was set based upon.\nFor instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date\nwith respect to the current state of the instance.",
-									MarkdownDescription: "observedGeneration represents the .metadata.generation that the condition was set based upon.\nFor instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date\nwith respect to the current state of the instance.",
-								},
-								"reason": schema.StringAttribute{
-									Computed:            true,
-									Description:         "reason contains a programmatic identifier indicating the reason for the condition's last transition.\nProducers of specific condition types may define expected values and meanings for this field,\nand whether the values are considered a guaranteed API.\nThe value should be a CamelCase string.\nThis field may not be empty.",
-									MarkdownDescription: "reason contains a programmatic identifier indicating the reason for the condition's last transition.\nProducers of specific condition types may define expected values and meanings for this field,\nand whether the values are considered a guaranteed API.\nThe value should be a CamelCase string.\nThis field may not be empty.",
-								},
-								"status": schema.StringAttribute{
-									Computed:            true,
-									Description:         "status of the condition, one of True, False, Unknown.",
-									MarkdownDescription: "status of the condition, one of True, False, Unknown.",
-								},
-								"type": schema.StringAttribute{
-									Computed:            true,
-									Description:         "type of condition in CamelCase or in foo.example.com/CamelCase.",
-									MarkdownDescription: "type of condition in CamelCase or in foo.example.com/CamelCase.",
-								},
-							},
-							CustomType: ConditionsType{
-								ObjectType: types.ObjectType{
-									AttrTypes: ConditionsValue{}.AttributeTypes(ctx),
-								},
-							},
-						},
+					"connected": schema.BoolAttribute{
 						Computed:            true,
-						Description:         "conditions represent the current state of the GitHubInstance resource.\nEach condition has a unique type and reflects the status of a specific aspect of the resource.\n\nStandard condition types include:\n- \"Available\": the resource is fully functional\n- \"Progressing\": the resource is being created or updated\n- \"Degraded\": the resource failed to reach or maintain its desired state\n\nThe status of each condition is one of True, False, or Unknown.",
-						MarkdownDescription: "conditions represent the current state of the GitHubInstance resource.\nEach condition has a unique type and reflects the status of a specific aspect of the resource.\n\nStandard condition types include:\n- \"Available\": the resource is fully functional\n- \"Progressing\": the resource is being created or updated\n- \"Degraded\": the resource failed to reach or maintain its desired state\n\nThe status of each condition is one of True, False, or Unknown.",
+						Description:         "Whether the instance is connected.",
+						MarkdownDescription: "Whether the instance is connected.",
+					},
+					"error": schema.StringAttribute{
+						Computed:            true,
+						Description:         "Error message if the instance is not connected.",
+						MarkdownDescription: "Error message if the instance is not connected.",
+					},
+					"last_checked": schema.StringAttribute{
+						Computed:            true,
+						Description:         "Last checked time.",
+						MarkdownDescription: "Last checked time.",
 					},
 				},
 				CustomType: StatusType{
@@ -2385,22 +2356,58 @@ func (t StatusType) ValueFromObject(ctx context.Context, in basetypes.ObjectValu
 
 	attributes := in.Attributes()
 
-	conditionsAttribute, ok := attributes["conditions"]
+	connectedAttribute, ok := attributes["connected"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`conditions is missing from object`)
+			`connected is missing from object`)
 
 		return nil, diags
 	}
 
-	conditionsVal, ok := conditionsAttribute.(basetypes.ListValue)
+	connectedVal, ok := connectedAttribute.(basetypes.BoolValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`conditions expected to be basetypes.ListValue, was: %T`, conditionsAttribute))
+			fmt.Sprintf(`connected expected to be basetypes.BoolValue, was: %T`, connectedAttribute))
+	}
+
+	errorAttribute, ok := attributes["error"]
+
+	if !ok {
+		diags.AddError(
+			"Attribute Missing",
+			`error is missing from object`)
+
+		return nil, diags
+	}
+
+	errorVal, ok := errorAttribute.(basetypes.StringValue)
+
+	if !ok {
+		diags.AddError(
+			"Attribute Wrong Type",
+			fmt.Sprintf(`error expected to be basetypes.StringValue, was: %T`, errorAttribute))
+	}
+
+	lastCheckedAttribute, ok := attributes["last_checked"]
+
+	if !ok {
+		diags.AddError(
+			"Attribute Missing",
+			`last_checked is missing from object`)
+
+		return nil, diags
+	}
+
+	lastCheckedVal, ok := lastCheckedAttribute.(basetypes.StringValue)
+
+	if !ok {
+		diags.AddError(
+			"Attribute Wrong Type",
+			fmt.Sprintf(`last_checked expected to be basetypes.StringValue, was: %T`, lastCheckedAttribute))
 	}
 
 	if diags.HasError() {
@@ -2408,8 +2415,10 @@ func (t StatusType) ValueFromObject(ctx context.Context, in basetypes.ObjectValu
 	}
 
 	return StatusValue{
-		Conditions: conditionsVal,
-		state:      attr.ValueStateKnown,
+		Connected:   connectedVal,
+		Error:       errorVal,
+		LastChecked: lastCheckedVal,
+		state:       attr.ValueStateKnown,
 	}, diags
 }
 
@@ -2476,22 +2485,58 @@ func NewStatusValue(attributeTypes map[string]attr.Type, attributes map[string]a
 		return NewStatusValueUnknown(), diags
 	}
 
-	conditionsAttribute, ok := attributes["conditions"]
+	connectedAttribute, ok := attributes["connected"]
 
 	if !ok {
 		diags.AddError(
 			"Attribute Missing",
-			`conditions is missing from object`)
+			`connected is missing from object`)
 
 		return NewStatusValueUnknown(), diags
 	}
 
-	conditionsVal, ok := conditionsAttribute.(basetypes.ListValue)
+	connectedVal, ok := connectedAttribute.(basetypes.BoolValue)
 
 	if !ok {
 		diags.AddError(
 			"Attribute Wrong Type",
-			fmt.Sprintf(`conditions expected to be basetypes.ListValue, was: %T`, conditionsAttribute))
+			fmt.Sprintf(`connected expected to be basetypes.BoolValue, was: %T`, connectedAttribute))
+	}
+
+	errorAttribute, ok := attributes["error"]
+
+	if !ok {
+		diags.AddError(
+			"Attribute Missing",
+			`error is missing from object`)
+
+		return NewStatusValueUnknown(), diags
+	}
+
+	errorVal, ok := errorAttribute.(basetypes.StringValue)
+
+	if !ok {
+		diags.AddError(
+			"Attribute Wrong Type",
+			fmt.Sprintf(`error expected to be basetypes.StringValue, was: %T`, errorAttribute))
+	}
+
+	lastCheckedAttribute, ok := attributes["last_checked"]
+
+	if !ok {
+		diags.AddError(
+			"Attribute Missing",
+			`last_checked is missing from object`)
+
+		return NewStatusValueUnknown(), diags
+	}
+
+	lastCheckedVal, ok := lastCheckedAttribute.(basetypes.StringValue)
+
+	if !ok {
+		diags.AddError(
+			"Attribute Wrong Type",
+			fmt.Sprintf(`last_checked expected to be basetypes.StringValue, was: %T`, lastCheckedAttribute))
 	}
 
 	if diags.HasError() {
@@ -2499,8 +2544,10 @@ func NewStatusValue(attributeTypes map[string]attr.Type, attributes map[string]a
 	}
 
 	return StatusValue{
-		Conditions: conditionsVal,
-		state:      attr.ValueStateKnown,
+		Connected:   connectedVal,
+		Error:       errorVal,
+		LastChecked: lastCheckedVal,
+		state:       attr.ValueStateKnown,
 	}, diags
 }
 
@@ -2572,33 +2619,51 @@ func (t StatusType) ValueType(ctx context.Context) attr.Value {
 var _ basetypes.ObjectValuable = StatusValue{}
 
 type StatusValue struct {
-	Conditions basetypes.ListValue `tfsdk:"conditions"`
-	state      attr.ValueState
+	Connected   basetypes.BoolValue   `tfsdk:"connected"`
+	Error       basetypes.StringValue `tfsdk:"error"`
+	LastChecked basetypes.StringValue `tfsdk:"last_checked"`
+	state       attr.ValueState
 }
 
 func (v StatusValue) ToTerraformValue(ctx context.Context) (tftypes.Value, error) {
-	attrTypes := make(map[string]tftypes.Type, 1)
+	attrTypes := make(map[string]tftypes.Type, 3)
 
 	var val tftypes.Value
 	var err error
 
-	attrTypes["conditions"] = basetypes.ListType{
-		ElemType: ConditionsValue{}.Type(ctx),
-	}.TerraformType(ctx)
+	attrTypes["connected"] = basetypes.BoolType{}.TerraformType(ctx)
+	attrTypes["error"] = basetypes.StringType{}.TerraformType(ctx)
+	attrTypes["last_checked"] = basetypes.StringType{}.TerraformType(ctx)
 
 	objectType := tftypes.Object{AttributeTypes: attrTypes}
 
 	switch v.state {
 	case attr.ValueStateKnown:
-		vals := make(map[string]tftypes.Value, 1)
+		vals := make(map[string]tftypes.Value, 3)
 
-		val, err = v.Conditions.ToTerraformValue(ctx)
+		val, err = v.Connected.ToTerraformValue(ctx)
 
 		if err != nil {
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
 		}
 
-		vals["conditions"] = val
+		vals["connected"] = val
+
+		val, err = v.Error.ToTerraformValue(ctx)
+
+		if err != nil {
+			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
+		}
+
+		vals["error"] = val
+
+		val, err = v.LastChecked.ToTerraformValue(ctx)
+
+		if err != nil {
+			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
+		}
+
+		vals["last_checked"] = val
 
 		if err := tftypes.ValidateValue(objectType, vals); err != nil {
 			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
@@ -2629,39 +2694,10 @@ func (v StatusValue) String() string {
 func (v StatusValue) ToObjectValue(ctx context.Context) (basetypes.ObjectValue, diag.Diagnostics) {
 	var diags diag.Diagnostics
 
-	conditions := types.ListValueMust(
-		ConditionsType{
-			basetypes.ObjectType{
-				AttrTypes: ConditionsValue{}.AttributeTypes(ctx),
-			},
-		},
-		v.Conditions.Elements(),
-	)
-
-	if v.Conditions.IsNull() {
-		conditions = types.ListNull(
-			ConditionsType{
-				basetypes.ObjectType{
-					AttrTypes: ConditionsValue{}.AttributeTypes(ctx),
-				},
-			},
-		)
-	}
-
-	if v.Conditions.IsUnknown() {
-		conditions = types.ListUnknown(
-			ConditionsType{
-				basetypes.ObjectType{
-					AttrTypes: ConditionsValue{}.AttributeTypes(ctx),
-				},
-			},
-		)
-	}
-
 	attributeTypes := map[string]attr.Type{
-		"conditions": basetypes.ListType{
-			ElemType: ConditionsValue{}.Type(ctx),
-		},
+		"connected":    basetypes.BoolType{},
+		"error":        basetypes.StringType{},
+		"last_checked": basetypes.StringType{},
 	}
 
 	if v.IsNull() {
@@ -2675,7 +2711,9 @@ func (v StatusValue) ToObjectValue(ctx context.Context) (basetypes.ObjectValue, 
 	objVal, diags := types.ObjectValue(
 		attributeTypes,
 		map[string]attr.Value{
-			"conditions": conditions,
+			"connected":    v.Connected,
+			"error":        v.Error,
+			"last_checked": v.LastChecked,
 		})
 
 	return objVal, diags
@@ -2696,7 +2734,15 @@ func (v StatusValue) Equal(o attr.Value) bool {
 		return true
 	}
 
-	if !v.Conditions.Equal(other.Conditions) {
+	if !v.Connected.Equal(other.Connected) {
+		return false
+	}
+
+	if !v.Error.Equal(other.Error) {
+		return false
+	}
+
+	if !v.LastChecked.Equal(other.LastChecked) {
 		return false
 	}
 
@@ -2713,607 +2759,8 @@ func (v StatusValue) Type(ctx context.Context) attr.Type {
 
 func (v StatusValue) AttributeTypes(ctx context.Context) map[string]attr.Type {
 	return map[string]attr.Type{
-		"conditions": basetypes.ListType{
-			ElemType: ConditionsValue{}.Type(ctx),
-		},
-	}
-}
-
-var _ basetypes.ObjectTypable = ConditionsType{}
-
-type ConditionsType struct {
-	basetypes.ObjectType
-}
-
-func (t ConditionsType) Equal(o attr.Type) bool {
-	other, ok := o.(ConditionsType)
-
-	if !ok {
-		return false
-	}
-
-	return t.ObjectType.Equal(other.ObjectType)
-}
-
-func (t ConditionsType) String() string {
-	return "ConditionsType"
-}
-
-func (t ConditionsType) ValueFromObject(ctx context.Context, in basetypes.ObjectValue) (basetypes.ObjectValuable, diag.Diagnostics) {
-	var diags diag.Diagnostics
-
-	attributes := in.Attributes()
-
-	lastTransitionTimeAttribute, ok := attributes["last_transition_time"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`last_transition_time is missing from object`)
-
-		return nil, diags
-	}
-
-	lastTransitionTimeVal, ok := lastTransitionTimeAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`last_transition_time expected to be basetypes.StringValue, was: %T`, lastTransitionTimeAttribute))
-	}
-
-	messageAttribute, ok := attributes["message"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`message is missing from object`)
-
-		return nil, diags
-	}
-
-	messageVal, ok := messageAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`message expected to be basetypes.StringValue, was: %T`, messageAttribute))
-	}
-
-	observedGenerationAttribute, ok := attributes["observed_generation"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`observed_generation is missing from object`)
-
-		return nil, diags
-	}
-
-	observedGenerationVal, ok := observedGenerationAttribute.(basetypes.Int64Value)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`observed_generation expected to be basetypes.Int64Value, was: %T`, observedGenerationAttribute))
-	}
-
-	reasonAttribute, ok := attributes["reason"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`reason is missing from object`)
-
-		return nil, diags
-	}
-
-	reasonVal, ok := reasonAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`reason expected to be basetypes.StringValue, was: %T`, reasonAttribute))
-	}
-
-	statusAttribute, ok := attributes["status"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`status is missing from object`)
-
-		return nil, diags
-	}
-
-	statusVal, ok := statusAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`status expected to be basetypes.StringValue, was: %T`, statusAttribute))
-	}
-
-	typeAttribute, ok := attributes["type"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`type is missing from object`)
-
-		return nil, diags
-	}
-
-	typeVal, ok := typeAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`type expected to be basetypes.StringValue, was: %T`, typeAttribute))
-	}
-
-	if diags.HasError() {
-		return nil, diags
-	}
-
-	return ConditionsValue{
-		LastTransitionTime: lastTransitionTimeVal,
-		Message:            messageVal,
-		ObservedGeneration: observedGenerationVal,
-		Reason:             reasonVal,
-		Status:             statusVal,
-		ConditionsType:     typeVal,
-		state:              attr.ValueStateKnown,
-	}, diags
-}
-
-func NewConditionsValueNull() ConditionsValue {
-	return ConditionsValue{
-		state: attr.ValueStateNull,
-	}
-}
-
-func NewConditionsValueUnknown() ConditionsValue {
-	return ConditionsValue{
-		state: attr.ValueStateUnknown,
-	}
-}
-
-func NewConditionsValue(attributeTypes map[string]attr.Type, attributes map[string]attr.Value) (ConditionsValue, diag.Diagnostics) {
-	var diags diag.Diagnostics
-
-	// Reference: https://github.com/hashicorp/terraform-plugin-framework/issues/521
-	ctx := context.Background()
-
-	for name, attributeType := range attributeTypes {
-		attribute, ok := attributes[name]
-
-		if !ok {
-			diags.AddError(
-				"Missing ConditionsValue Attribute Value",
-				"While creating a ConditionsValue value, a missing attribute value was detected. "+
-					"A ConditionsValue must contain values for all attributes, even if null or unknown. "+
-					"This is always an issue with the provider and should be reported to the provider developers.\n\n"+
-					fmt.Sprintf("ConditionsValue Attribute Name (%s) Expected Type: %s", name, attributeType.String()),
-			)
-
-			continue
-		}
-
-		if !attributeType.Equal(attribute.Type(ctx)) {
-			diags.AddError(
-				"Invalid ConditionsValue Attribute Type",
-				"While creating a ConditionsValue value, an invalid attribute value was detected. "+
-					"A ConditionsValue must use a matching attribute type for the value. "+
-					"This is always an issue with the provider and should be reported to the provider developers.\n\n"+
-					fmt.Sprintf("ConditionsValue Attribute Name (%s) Expected Type: %s\n", name, attributeType.String())+
-					fmt.Sprintf("ConditionsValue Attribute Name (%s) Given Type: %s", name, attribute.Type(ctx)),
-			)
-		}
-	}
-
-	for name := range attributes {
-		_, ok := attributeTypes[name]
-
-		if !ok {
-			diags.AddError(
-				"Extra ConditionsValue Attribute Value",
-				"While creating a ConditionsValue value, an extra attribute value was detected. "+
-					"A ConditionsValue must not contain values beyond the expected attribute types. "+
-					"This is always an issue with the provider and should be reported to the provider developers.\n\n"+
-					fmt.Sprintf("Extra ConditionsValue Attribute Name: %s", name),
-			)
-		}
-	}
-
-	if diags.HasError() {
-		return NewConditionsValueUnknown(), diags
-	}
-
-	lastTransitionTimeAttribute, ok := attributes["last_transition_time"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`last_transition_time is missing from object`)
-
-		return NewConditionsValueUnknown(), diags
-	}
-
-	lastTransitionTimeVal, ok := lastTransitionTimeAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`last_transition_time expected to be basetypes.StringValue, was: %T`, lastTransitionTimeAttribute))
-	}
-
-	messageAttribute, ok := attributes["message"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`message is missing from object`)
-
-		return NewConditionsValueUnknown(), diags
-	}
-
-	messageVal, ok := messageAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`message expected to be basetypes.StringValue, was: %T`, messageAttribute))
-	}
-
-	observedGenerationAttribute, ok := attributes["observed_generation"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`observed_generation is missing from object`)
-
-		return NewConditionsValueUnknown(), diags
-	}
-
-	observedGenerationVal, ok := observedGenerationAttribute.(basetypes.Int64Value)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`observed_generation expected to be basetypes.Int64Value, was: %T`, observedGenerationAttribute))
-	}
-
-	reasonAttribute, ok := attributes["reason"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`reason is missing from object`)
-
-		return NewConditionsValueUnknown(), diags
-	}
-
-	reasonVal, ok := reasonAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`reason expected to be basetypes.StringValue, was: %T`, reasonAttribute))
-	}
-
-	statusAttribute, ok := attributes["status"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`status is missing from object`)
-
-		return NewConditionsValueUnknown(), diags
-	}
-
-	statusVal, ok := statusAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`status expected to be basetypes.StringValue, was: %T`, statusAttribute))
-	}
-
-	typeAttribute, ok := attributes["type"]
-
-	if !ok {
-		diags.AddError(
-			"Attribute Missing",
-			`type is missing from object`)
-
-		return NewConditionsValueUnknown(), diags
-	}
-
-	typeVal, ok := typeAttribute.(basetypes.StringValue)
-
-	if !ok {
-		diags.AddError(
-			"Attribute Wrong Type",
-			fmt.Sprintf(`type expected to be basetypes.StringValue, was: %T`, typeAttribute))
-	}
-
-	if diags.HasError() {
-		return NewConditionsValueUnknown(), diags
-	}
-
-	return ConditionsValue{
-		LastTransitionTime: lastTransitionTimeVal,
-		Message:            messageVal,
-		ObservedGeneration: observedGenerationVal,
-		Reason:             reasonVal,
-		Status:             statusVal,
-		ConditionsType:     typeVal,
-		state:              attr.ValueStateKnown,
-	}, diags
-}
-
-func NewConditionsValueMust(attributeTypes map[string]attr.Type, attributes map[string]attr.Value) ConditionsValue {
-	object, diags := NewConditionsValue(attributeTypes, attributes)
-
-	if diags.HasError() {
-		// This could potentially be added to the diag package.
-		diagsStrings := make([]string, 0, len(diags))
-
-		for _, diagnostic := range diags {
-			diagsStrings = append(diagsStrings, fmt.Sprintf(
-				"%s | %s | %s",
-				diagnostic.Severity(),
-				diagnostic.Summary(),
-				diagnostic.Detail()))
-		}
-
-		panic("NewConditionsValueMust received error(s): " + strings.Join(diagsStrings, "\n"))
-	}
-
-	return object
-}
-
-func (t ConditionsType) ValueFromTerraform(ctx context.Context, in tftypes.Value) (attr.Value, error) {
-	if in.Type() == nil {
-		return NewConditionsValueNull(), nil
-	}
-
-	if !in.Type().Equal(t.TerraformType(ctx)) {
-		return nil, fmt.Errorf("expected %s, got %s", t.TerraformType(ctx), in.Type())
-	}
-
-	if !in.IsKnown() {
-		return NewConditionsValueUnknown(), nil
-	}
-
-	if in.IsNull() {
-		return NewConditionsValueNull(), nil
-	}
-
-	attributes := map[string]attr.Value{}
-
-	val := map[string]tftypes.Value{}
-
-	err := in.As(&val)
-
-	if err != nil {
-		return nil, err
-	}
-
-	for k, v := range val {
-		a, err := t.AttrTypes[k].ValueFromTerraform(ctx, v)
-
-		if err != nil {
-			return nil, err
-		}
-
-		attributes[k] = a
-	}
-
-	return NewConditionsValueMust(ConditionsValue{}.AttributeTypes(ctx), attributes), nil
-}
-
-func (t ConditionsType) ValueType(ctx context.Context) attr.Value {
-	return ConditionsValue{}
-}
-
-var _ basetypes.ObjectValuable = ConditionsValue{}
-
-type ConditionsValue struct {
-	LastTransitionTime basetypes.StringValue `tfsdk:"last_transition_time"`
-	Message            basetypes.StringValue `tfsdk:"message"`
-	ObservedGeneration basetypes.Int64Value  `tfsdk:"observed_generation"`
-	Reason             basetypes.StringValue `tfsdk:"reason"`
-	Status             basetypes.StringValue `tfsdk:"status"`
-	ConditionsType     basetypes.StringValue `tfsdk:"type"`
-	state              attr.ValueState
-}
-
-func (v ConditionsValue) ToTerraformValue(ctx context.Context) (tftypes.Value, error) {
-	attrTypes := make(map[string]tftypes.Type, 6)
-
-	var val tftypes.Value
-	var err error
-
-	attrTypes["last_transition_time"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["message"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["observed_generation"] = basetypes.Int64Type{}.TerraformType(ctx)
-	attrTypes["reason"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["status"] = basetypes.StringType{}.TerraformType(ctx)
-	attrTypes["type"] = basetypes.StringType{}.TerraformType(ctx)
-
-	objectType := tftypes.Object{AttributeTypes: attrTypes}
-
-	switch v.state {
-	case attr.ValueStateKnown:
-		vals := make(map[string]tftypes.Value, 6)
-
-		val, err = v.LastTransitionTime.ToTerraformValue(ctx)
-
-		if err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		vals["last_transition_time"] = val
-
-		val, err = v.Message.ToTerraformValue(ctx)
-
-		if err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		vals["message"] = val
-
-		val, err = v.ObservedGeneration.ToTerraformValue(ctx)
-
-		if err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		vals["observed_generation"] = val
-
-		val, err = v.Reason.ToTerraformValue(ctx)
-
-		if err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		vals["reason"] = val
-
-		val, err = v.Status.ToTerraformValue(ctx)
-
-		if err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		vals["status"] = val
-
-		val, err = v.ConditionsType.ToTerraformValue(ctx)
-
-		if err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		vals["type"] = val
-
-		if err := tftypes.ValidateValue(objectType, vals); err != nil {
-			return tftypes.NewValue(objectType, tftypes.UnknownValue), err
-		}
-
-		return tftypes.NewValue(objectType, vals), nil
-	case attr.ValueStateNull:
-		return tftypes.NewValue(objectType, nil), nil
-	case attr.ValueStateUnknown:
-		return tftypes.NewValue(objectType, tftypes.UnknownValue), nil
-	default:
-		panic(fmt.Sprintf("unhandled Object state in ToTerraformValue: %s", v.state))
-	}
-}
-
-func (v ConditionsValue) IsNull() bool {
-	return v.state == attr.ValueStateNull
-}
-
-func (v ConditionsValue) IsUnknown() bool {
-	return v.state == attr.ValueStateUnknown
-}
-
-func (v ConditionsValue) String() string {
-	return "ConditionsValue"
-}
-
-func (v ConditionsValue) ToObjectValue(ctx context.Context) (basetypes.ObjectValue, diag.Diagnostics) {
-	var diags diag.Diagnostics
-
-	attributeTypes := map[string]attr.Type{
-		"last_transition_time": basetypes.StringType{},
-		"message":              basetypes.StringType{},
-		"observed_generation":  basetypes.Int64Type{},
-		"reason":               basetypes.StringType{},
-		"status":               basetypes.StringType{},
-		"type":                 basetypes.StringType{},
-	}
-
-	if v.IsNull() {
-		return types.ObjectNull(attributeTypes), diags
-	}
-
-	if v.IsUnknown() {
-		return types.ObjectUnknown(attributeTypes), diags
-	}
-
-	objVal, diags := types.ObjectValue(
-		attributeTypes,
-		map[string]attr.Value{
-			"last_transition_time": v.LastTransitionTime,
-			"message":              v.Message,
-			"observed_generation":  v.ObservedGeneration,
-			"reason":               v.Reason,
-			"status":               v.Status,
-			"type":                 v.ConditionsType,
-		})
-
-	return objVal, diags
-}
-
-func (v ConditionsValue) Equal(o attr.Value) bool {
-	other, ok := o.(ConditionsValue)
-
-	if !ok {
-		return false
-	}
-
-	if v.state != other.state {
-		return false
-	}
-
-	if v.state != attr.ValueStateKnown {
-		return true
-	}
-
-	if !v.LastTransitionTime.Equal(other.LastTransitionTime) {
-		return false
-	}
-
-	if !v.Message.Equal(other.Message) {
-		return false
-	}
-
-	if !v.ObservedGeneration.Equal(other.ObservedGeneration) {
-		return false
-	}
-
-	if !v.Reason.Equal(other.Reason) {
-		return false
-	}
-
-	if !v.Status.Equal(other.Status) {
-		return false
-	}
-
-	if !v.ConditionsType.Equal(other.ConditionsType) {
-		return false
-	}
-
-	return true
-}
-
-func (v ConditionsValue) Type(ctx context.Context) attr.Type {
-	return ConditionsType{
-		basetypes.ObjectType{
-			AttrTypes: v.AttributeTypes(ctx),
-		},
-	}
-}
-
-func (v ConditionsValue) AttributeTypes(ctx context.Context) map[string]attr.Type {
-	return map[string]attr.Type{
-		"last_transition_time": basetypes.StringType{},
-		"message":              basetypes.StringType{},
-		"observed_generation":  basetypes.Int64Type{},
-		"reason":               basetypes.StringType{},
-		"status":               basetypes.StringType{},
-		"type":                 basetypes.StringType{},
+		"connected":    basetypes.BoolType{},
+		"error":        basetypes.StringType{},
+		"last_checked": basetypes.StringType{},
 	}
 }
