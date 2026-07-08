@@ -13,7 +13,7 @@ import (
 	"github.com/nokia/eda/apps/terraform-provider-github/internal/tfutils"
 )
 
-const read_ds_clusterGitHubActionList = "/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions"
+const read_ds_clusterGitHubActionList = "/apps/github.eda.nokia.com/v1alpha1/clustergithubactions"
 
 var (
 	_ datasource.DataSource              = (*clusterGitHubActionListDataSource)(nil)
@@ -62,9 +62,7 @@ func (d *clusterGitHubActionListDataSource) Read(ctx context.Context, req dataso
 
 	t0 := time.Now()
 	result := map[string]any{}
-	err = d.client.GetByQuery(ctx, read_ds_clusterGitHubActionList, map[string]string{
-		"namespace": tfutils.StringValue(data.Namespace),
-	}, queryParams, &result)
+	err = d.client.GetByQuery(ctx, read_ds_clusterGitHubActionList, nil, queryParams, &result)
 
 	tflog.Info(ctx, "Read()::API returned", map[string]any{
 		"path":      read_ds_clusterGitHubActionList,

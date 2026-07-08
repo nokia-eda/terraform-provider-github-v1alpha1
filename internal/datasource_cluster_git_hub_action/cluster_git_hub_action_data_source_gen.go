@@ -94,11 +94,6 @@ func ClusterGitHubActionDataSourceSchema(ctx context.Context) schema.Schema {
 				Description:         "name of the ClusterGitHubAction",
 				MarkdownDescription: "name of the ClusterGitHubAction",
 			},
-			"namespace": schema.StringAttribute{
-				Required:            true,
-				Description:         "the namespace scope in which to operate",
-				MarkdownDescription: "the namespace scope in which to operate",
-			},
 			"spec": schema.SingleNestedAttribute{
 				Attributes: map[string]schema.Attribute{
 					"instance": schema.StringAttribute{
@@ -287,7 +282,6 @@ type ClusterGitHubActionModel struct {
 	Kind       types.String    `tfsdk:"kind"`
 	Metadata   MetadataValue   `tfsdk:"metadata"`
 	Name       types.String    `tfsdk:"name"`
-	Namespace  types.String    `tfsdk:"namespace"`
 	Spec       SpecValue       `tfsdk:"spec"`
 	Status     StatusValue     `tfsdk:"status"`
 }

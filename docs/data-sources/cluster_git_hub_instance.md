@@ -18,7 +18,6 @@ description: |-
 ### Required
 
 - `name` (String) name of the ClusterGitHubInstance
-- `namespace` (String) the namespace scope in which to operate
 
 ### Optional
 

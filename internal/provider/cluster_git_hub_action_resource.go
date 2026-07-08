@@ -16,10 +16,10 @@ import (
 )
 
 const (
-	create_rs_clusterGitHubAction = "/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions"
-	read_rs_clusterGitHubAction   = "/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions/{name}"
-	update_rs_clusterGitHubAction = "/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions/{name}"
-	delete_rs_clusterGitHubAction = "/apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/clustergithubactions/{name}"
+	create_rs_clusterGitHubAction = "/apps/github.eda.nokia.com/v1alpha1/clustergithubactions"
+	read_rs_clusterGitHubAction   = "/apps/github.eda.nokia.com/v1alpha1/clustergithubactions/{name}"
+	update_rs_clusterGitHubAction = "/apps/github.eda.nokia.com/v1alpha1/clustergithubactions/{name}"
+	delete_rs_clusterGitHubAction = "/apps/github.eda.nokia.com/v1alpha1/clustergithubactions/{name}"
 )
 
 var (
@@ -77,9 +77,7 @@ func (r *clusterGitHubActionResource) Create(ctx context.Context, req resource.C
 	t0 := time.Now()
 	result := map[string]any{}
 
-	err = r.client.Create(ctx, create_rs_clusterGitHubAction, map[string]string{
-		"namespace": tfutils.StringValue(data.Metadata.Namespace),
-	}, reqBody, &result)
+	err = r.client.Create(ctx, create_rs_clusterGitHubAction, nil, reqBody, &result)
 
 	tflog.Info(ctx, "Create()::API returned", map[string]any{
 		"path":      create_rs_clusterGitHubAction,
@@ -96,8 +94,7 @@ func (r *clusterGitHubActionResource) Create(ctx context.Context, req resource.C
 	t0 = time.Now()
 
 	err = r.client.Get(ctx, read_rs_clusterGitHubAction, map[string]string{
-		"namespace": tfutils.StringValue(data.Metadata.Namespace),
-		"name":      tfutils.StringValue(data.Metadata.Name),
+		"name": tfutils.StringValue(data.Metadata.Name),
 	}, &result)
 
 	tflog.Info(ctx, "Read()::API returned", map[string]any{
@@ -141,8 +138,7 @@ func (r *clusterGitHubActionResource) Read(ctx context.Context, req resource.Rea
 	result := map[string]any{}
 
 	err := r.client.Get(ctx, read_rs_clusterGitHubAction, map[string]string{
-		"namespace": tfutils.StringValue(data.Metadata.Namespace),
-		"name":      tfutils.StringValue(data.Metadata.Name),
+		"name": tfutils.StringValue(data.Metadata.Name),
 	}, &result)
 
 	tflog.Info(ctx, "Read()::API returned", map[string]any{
@@ -199,8 +195,7 @@ func (r *clusterGitHubActionResource) Update(ctx context.Context, req resource.U
 	result := map[string]any{}
 
 	err = r.client.Update(ctx, update_rs_clusterGitHubAction, map[string]string{
-		"namespace": tfutils.StringValue(data.Metadata.Namespace),
-		"name":      tfutils.StringValue(data.Metadata.Name),
+		"name": tfutils.StringValue(data.Metadata.Name),
 	}, reqBody, &result)
 
 	tflog.Info(ctx, "Update()::API returned", map[string]any{
@@ -218,8 +213,7 @@ func (r *clusterGitHubActionResource) Update(ctx context.Context, req resource.U
 	t0 = time.Now()
 
 	err = r.client.Get(ctx, read_rs_clusterGitHubAction, map[string]string{
-		"namespace": tfutils.StringValue(data.Metadata.Namespace),
-		"name":      tfutils.StringValue(data.Metadata.Name),
+		"name": tfutils.StringValue(data.Metadata.Name),
 	}, &result)
 
 	tflog.Info(ctx, "Read()::API returned", map[string]any{
@@ -264,8 +258,7 @@ func (r *clusterGitHubActionResource) Delete(ctx context.Context, req resource.D
 	result := map[string]any{}
 
 	err := r.client.Delete(ctx, delete_rs_clusterGitHubAction, map[string]string{
-		"namespace": tfutils.StringValue(data.Metadata.Namespace),
-		"name":      tfutils.StringValue(data.Metadata.Name),
+		"name": tfutils.StringValue(data.Metadata.Name),
 	}, &result)
 
 	tflog.Info(ctx, "Delete()::API returned", map[string]any{
@@ -303,10 +296,9 @@ func (r *clusterGitHubActionResource) Configure(_ context.Context, req resource.
 // ImportState implements resource.ResourceWithImportState.
 func (r *clusterGitHubActionResource) ImportState(ctx context.Context, req resource.ImportStateRequest, resp *resource.ImportStateResponse) {
 	parts := strings.Split(req.ID, "/")
-	if len(parts) < 2 {
-		resp.Diagnostics.AddError("Invalid ID", fmt.Sprintf("Expected format: id = <namespace/name>, got: id = %s", req.ID))
+	if len(parts) < 1 {
+		resp.Diagnostics.AddError("Invalid ID", fmt.Sprintf("Expected format: id = <name>, got: id = %s", req.ID))
 		return
 	}
-	resp.Diagnostics.Append(resp.State.SetAttribute(ctx, path.Root("metadata").AtName("namespace"), parts[0])...)
-	resp.Diagnostics.Append(resp.State.SetAttribute(ctx, path.Root("metadata").AtName("name"), parts[1])...)
+	resp.Diagnostics.Append(resp.State.SetAttribute(ctx, path.Root("metadata").AtName("name"), parts[0])...)
 }

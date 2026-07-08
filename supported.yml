@@ -1,0 +1,106 @@
+datasources:
+  - model_name: app_group
+    oas_endpoint: /apps/github.eda.nokia.com
+    oas_schema: AppGroup
+  - model_name: resource_list
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1
+    oas_schema: ResourceList
+  - model_name: cluster_git_hub_action_list
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubactions
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubActionList
+  - model_name: cluster_git_hub_action
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubactions/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubAction
+  - model_name: cluster_git_hub_instance_list
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubinstances
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubInstanceList
+  - model_name: cluster_git_hub_instance
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubinstances/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubInstance
+  - model_name: cluster_git_hub_issue_list
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubissues
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubIssueList
+  - model_name: cluster_git_hub_issue
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubissues/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubIssue
+  - model_name: git_hub_action_list
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubActionList
+  - model_name: git_hub_action
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubAction
+  - model_name: git_hub_instance_list
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubInstanceList
+  - model_name: git_hub_instance
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubInstance
+  - model_name: git_hub_issue_list
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubIssueList
+  - model_name: git_hub_issue
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubIssue
+  - model_name: create_github_issue_list
+    oas_endpoint: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues
+    oas_schema: com.nokia.eda.github.v1alpha1.CreateGithubIssueList
+  - model_name: create_github_issue
+    oas_endpoint: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.CreateGithubIssue
+  - model_name: workflow_get_inputs_resp_elem
+    oas_endpoint: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues/{name}/_input
+    oas_schema: WorkflowGetInputsRespElem
+  - model_name: run_github_workflow_list
+    oas_endpoint: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows
+    oas_schema: com.nokia.eda.github.v1alpha1.RunGithubWorkflowList
+  - model_name: run_github_workflow
+    oas_endpoint: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows/{name}
+    oas_schema: com.nokia.eda.github.v1alpha1.RunGithubWorkflow
+
+resources:
+  - model_name: cluster_git_hub_action
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubactions
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubAction
+  - model_name: cluster_git_hub_instance
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubinstances
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubInstance
+  - model_name: cluster_git_hub_issue
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/clustergithubissues
+    oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubIssue
+  - model_name: git_hub_action
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubAction
+  - model_name: git_hub_instance
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubInstance
+  - model_name: git_hub_issue
+    oas_endpoint: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues
+    oas_schema: com.nokia.eda.github.v1alpha1.GitHubIssue
+  - model_name: create_github_issue
+    oas_endpoint: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/creategithubissues
+    oas_schema: com.nokia.eda.github.v1alpha1.CreateGithubIssue
+  - model_name: run_github_workflow
+    oas_endpoint: /workflows/v1/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/rungithubworkflows
+    oas_schema: com.nokia.eda.github.v1alpha1.RunGithubWorkflow
+
+qualified:
+  datasources:
+    - oas_schema: IntentTargets
+      get: /apps/github.eda.nokia.com/v1alpha1/clustergithubactions/{name}/_targets
+    - oas_schema: ResourceHistory
+      get: /apps/github.eda.nokia.com/v1alpha1/clustergithubactions/{name}/_revs
+    - oas_schema: UIResult
+      get: /apps/github.eda.nokia.com/v1alpha1/_ui/{pathname}
+    - oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubAction_DeletedResources
+      get: /apps/github.eda.nokia.com/v1alpha1/clustergithubactions/_deleted
+    - oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubInstance_DeletedResources
+      get: /apps/github.eda.nokia.com/v1alpha1/clustergithubinstances/_deleted
+    - oas_schema: com.nokia.eda.github.v1alpha1.ClusterGitHubIssue_DeletedResources
+      get: /apps/github.eda.nokia.com/v1alpha1/clustergithubissues/_deleted
+    - oas_schema: com.nokia.eda.github.v1alpha1.GitHubAction_DeletedResources
+      get: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubactions/_deleted
+    - oas_schema: com.nokia.eda.github.v1alpha1.GitHubInstance_DeletedResources
+      get: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubinstances/_deleted
+    - oas_schema: com.nokia.eda.github.v1alpha1.GitHubIssue_DeletedResources
+      get: /apps/github.eda.nokia.com/v1alpha1/namespaces/{namespace}/githubissues/_deleted
+  resources:
