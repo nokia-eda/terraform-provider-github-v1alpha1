@@ -20,10 +20,6 @@ description: |-
 - `name` (String) name of the CreateGithubIssue
 - `namespace` (String) the namespace scope in which to operate
 
-### Optional
-
-- `spec` (Attributes) spec defines the desired state of CreateGithubIssue (see [below for nested schema](#nestedatt--spec))
-
 ### Read-Only
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--alarms))
@@ -31,30 +27,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) spec defines the desired state of CreateGithubIssue (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) status defines the observed state of CreateGithubIssue (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `cluster_instance` (String) Cluster level Github instance name.
-- `instance` (String) Github instance name.
-- `issue` (Attributes) Issue to create. (see [below for nested schema](#nestedatt--spec--issue))
-- `repo` (String) Repository to create the issue.
-
-<a id="nestedatt--spec--issue"></a>
-### Nested Schema for `spec.issue`
-
-Optional:
-
-- `assignees` (List of String) Assignees of the issue.
-- `body` (String) Body of the issue.
-- `labels` (List of String) Labels of the issue.
-- `milestone` (String) Milestone of the issue.
-- `title` (String) Title of the issue.
-
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -84,6 +58,29 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `cluster_instance` (String) Cluster level Github instance name.
+- `instance` (String) Github instance name.
+- `issue` (Attributes) Issue to create. (see [below for nested schema](#nestedatt--spec--issue))
+- `repo` (String) Repository to create the issue.
+
+<a id="nestedatt--spec--issue"></a>
+### Nested Schema for `spec.issue`
+
+Read-Only:
+
+- `assignees` (List of String) Assignees of the issue.
+- `body` (String) Body of the issue.
+- `labels` (List of String) Labels of the issue.
+- `milestone` (String) Milestone of the issue.
+- `title` (String) Title of the issue.
+
 
 
 <a id="nestedatt--status"></a>

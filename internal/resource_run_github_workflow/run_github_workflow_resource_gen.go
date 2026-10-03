@@ -126,11 +126,13 @@ func RunGithubWorkflowResourceSchema(ctx context.Context) schema.Schema {
 				Attributes: map[string]schema.Attribute{
 					"cluster_instance": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Cluster level Github instance name.",
 						MarkdownDescription: "Cluster level Github instance name.",
 					},
 					"instance": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Github instance name.",
 						MarkdownDescription: "Github instance name.",
 					},
@@ -139,6 +141,7 @@ func RunGithubWorkflowResourceSchema(ctx context.Context) schema.Schema {
 							Attributes: map[string]schema.Attribute{
 								"name": schema.StringAttribute{
 									Optional:            true,
+									Computed:            true,
 									Description:         "Parameter name",
 									MarkdownDescription: "Parameter name",
 								},
@@ -148,16 +151,19 @@ func RunGithubWorkflowResourceSchema(ctx context.Context) schema.Schema {
 											Attributes: map[string]schema.Attribute{
 												"field": schema.StringAttribute{
 													Optional:            true,
+													Computed:            true,
 													Description:         "Field to add to the dynamic value",
 													MarkdownDescription: "Field to add to the dynamic value",
 												},
 												"path": schema.StringAttribute{
 													Optional:            true,
+													Computed:            true,
 													Description:         "Path to the EDB table to watch",
 													MarkdownDescription: "Path to the EDB table to watch",
 												},
 												"where": schema.StringAttribute{
 													Optional:            true,
+													Computed:            true,
 													Description:         "Where clause to filter the results",
 													MarkdownDescription: "Where clause to filter the results",
 												},
@@ -168,11 +174,13 @@ func RunGithubWorkflowResourceSchema(ctx context.Context) schema.Schema {
 												},
 											},
 											Optional:            true,
+											Computed:            true,
 											Description:         "Dynamic value",
 											MarkdownDescription: "Dynamic value",
 										},
 										"static_value": schema.StringAttribute{
 											Optional:            true,
+											Computed:            true,
 											Description:         "Static value",
 											MarkdownDescription: "Static value",
 										},
@@ -183,6 +191,7 @@ func RunGithubWorkflowResourceSchema(ctx context.Context) schema.Schema {
 										},
 									},
 									Optional:            true,
+									Computed:            true,
 									Description:         "Parameter value",
 									MarkdownDescription: "Parameter value",
 								},
@@ -194,21 +203,25 @@ func RunGithubWorkflowResourceSchema(ctx context.Context) schema.Schema {
 							},
 						},
 						Optional:            true,
+						Computed:            true,
 						Description:         "Parameters to pass to the workflow.",
 						MarkdownDescription: "Parameters to pass to the workflow.",
 					},
 					"ref": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Reference is the branch, tag or commit hash to run the workflow.",
 						MarkdownDescription: "Reference is the branch, tag or commit hash to run the workflow.",
 					},
 					"repo": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Repository to run the workflow.",
 						MarkdownDescription: "Repository to run the workflow.",
 					},
 					"workflow": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Workflow to run",
 						MarkdownDescription: "Workflow to run",
 					},

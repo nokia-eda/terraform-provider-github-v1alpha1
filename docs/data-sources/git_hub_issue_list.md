@@ -35,10 +35,6 @@ description: |-
 <a id="nestedatt--items"></a>
 ### Nested Schema for `items`
 
-Optional:
-
-- `spec` (Attributes) spec defines the desired state of GitHubIssue (see [below for nested schema](#nestedatt--items--spec))
-
 Read-Only:
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--items--alarms))
@@ -46,59 +42,8 @@ Read-Only:
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--items--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--items--metadata))
+- `spec` (Attributes) spec defines the desired state of GitHubIssue (see [below for nested schema](#nestedatt--items--spec))
 - `status` (Attributes) status defines the observed state of GitHubIssue (see [below for nested schema](#nestedatt--items--status))
-
-<a id="nestedatt--items--spec"></a>
-### Nested Schema for `items.spec`
-
-Optional:
-
-- `close_on_resolve` (Boolean) Close the issue on resolve.
-- `instance` (String) Github instance name.
-- `issue` (Attributes) Issue to create. (see [below for nested schema](#nestedatt--items--spec--issue))
-- `repo` (String) Repository to create the issue.
-- `trigger` (Attributes) Trigger conditions to create the issue. (see [below for nested schema](#nestedatt--items--spec--trigger))
-
-<a id="nestedatt--items--spec--issue"></a>
-### Nested Schema for `items.spec.issue`
-
-Optional:
-
-- `assignees` (List of String) Assignees of the issue.
-- `body` (String) Body of the issue.
-- `labels` (List of String) Labels of the issue.
-- `milestone` (String) Milestone of the issue.
-- `title` (String) Title of the issue.
-
-
-<a id="nestedatt--items--spec--trigger"></a>
-### Nested Schema for `items.spec.trigger`
-
-Optional:
-
-- `alarm` (Attributes) Alarm to trigger the workflow (see [below for nested schema](#nestedatt--items--spec--trigger--alarm))
-- `query` (Attributes) Query to trigger the workflow (see [below for nested schema](#nestedatt--items--spec--trigger--query))
-
-<a id="nestedatt--items--spec--trigger--alarm"></a>
-### Nested Schema for `items.spec.trigger.alarm`
-
-Optional:
-
-- `exclude` (List of String) Excluded alarm types that don't trigger the workflow
-- `include` (List of String) Included alarm types that trigger the workflow
-
-
-<a id="nestedatt--items--spec--trigger--query"></a>
-### Nested Schema for `items.spec.trigger.query`
-
-Optional:
-
-- `fields` (List of String) List of fields to watch
-- `path` (String) Path to the EDB table to watch
-- `where` (String) Where clause to filter the results
-
-
-
 
 <a id="nestedatt--items--alarms"></a>
 ### Nested Schema for `items.alarms`
@@ -128,6 +73,58 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--items--spec"></a>
+### Nested Schema for `items.spec`
+
+Read-Only:
+
+- `close_on_resolve` (Boolean) Close the issue on resolve.
+- `instance` (String) Github instance name.
+- `issue` (Attributes) Issue to create. (see [below for nested schema](#nestedatt--items--spec--issue))
+- `repo` (String) Repository to create the issue.
+- `trigger` (Attributes) Trigger conditions to create the issue. (see [below for nested schema](#nestedatt--items--spec--trigger))
+
+<a id="nestedatt--items--spec--issue"></a>
+### Nested Schema for `items.spec.issue`
+
+Read-Only:
+
+- `assignees` (List of String) Assignees of the issue.
+- `body` (String) Body of the issue.
+- `labels` (List of String) Labels of the issue.
+- `milestone` (String) Milestone of the issue.
+- `title` (String) Title of the issue.
+
+
+<a id="nestedatt--items--spec--trigger"></a>
+### Nested Schema for `items.spec.trigger`
+
+Read-Only:
+
+- `alarm` (Attributes) Alarm to trigger the workflow (see [below for nested schema](#nestedatt--items--spec--trigger--alarm))
+- `query` (Attributes) Query to trigger the workflow (see [below for nested schema](#nestedatt--items--spec--trigger--query))
+
+<a id="nestedatt--items--spec--trigger--alarm"></a>
+### Nested Schema for `items.spec.trigger.alarm`
+
+Read-Only:
+
+- `exclude` (List of String) Excluded alarm types that don't trigger the workflow
+- `include` (List of String) Included alarm types that trigger the workflow
+
+
+<a id="nestedatt--items--spec--trigger--query"></a>
+### Nested Schema for `items.spec.trigger.query`
+
+Read-Only:
+
+- `fields` (List of String) List of fields to watch
+- `path` (String) Path to the EDB table to watch
+- `where` (String) Where clause to filter the results
+
+
 
 
 <a id="nestedatt--items--status"></a>

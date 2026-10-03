@@ -20,10 +20,6 @@ description: |-
 - `name` (String) name of the RunGithubWorkflow
 - `namespace` (String) the namespace scope in which to operate
 
-### Optional
-
-- `spec` (Attributes) spec defines the desired state of RunGithubWorkflow (see [below for nested schema](#nestedatt--spec))
-
 ### Read-Only
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--alarms))
@@ -31,48 +27,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) spec defines the desired state of RunGithubWorkflow (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) status defines the observed state of RunGithubWorkflow (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `cluster_instance` (String) Cluster level Github instance name.
-- `instance` (String) Github instance name.
-- `parameters` (Attributes List) Parameters to pass to the workflow. (see [below for nested schema](#nestedatt--spec--parameters))
-- `ref` (String) Reference is the branch, tag or commit hash to run the workflow.
-- `repo` (String) Repository to run the workflow.
-- `workflow` (String) Workflow to run
-
-<a id="nestedatt--spec--parameters"></a>
-### Nested Schema for `spec.parameters`
-
-Optional:
-
-- `name` (String) Parameter name
-- `value` (Attributes) Parameter value (see [below for nested schema](#nestedatt--spec--parameters--value))
-
-<a id="nestedatt--spec--parameters--value"></a>
-### Nested Schema for `spec.parameters.value`
-
-Optional:
-
-- `dynamic_value` (Attributes) Dynamic value (see [below for nested schema](#nestedatt--spec--parameters--value--dynamic_value))
-- `static_value` (String) Static value
-
-<a id="nestedatt--spec--parameters--value--dynamic_value"></a>
-### Nested Schema for `spec.parameters.value.dynamic_value`
-
-Optional:
-
-- `field` (String) Field to add to the dynamic value
-- `path` (String) Path to the EDB table to watch
-- `where` (String) Where clause to filter the results
-
-
-
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -102,6 +58,47 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `cluster_instance` (String) Cluster level Github instance name.
+- `instance` (String) Github instance name.
+- `parameters` (Attributes List) Parameters to pass to the workflow. (see [below for nested schema](#nestedatt--spec--parameters))
+- `ref` (String) Reference is the branch, tag or commit hash to run the workflow.
+- `repo` (String) Repository to run the workflow.
+- `workflow` (String) Workflow to run
+
+<a id="nestedatt--spec--parameters"></a>
+### Nested Schema for `spec.parameters`
+
+Read-Only:
+
+- `name` (String) Parameter name
+- `value` (Attributes) Parameter value (see [below for nested schema](#nestedatt--spec--parameters--value))
+
+<a id="nestedatt--spec--parameters--value"></a>
+### Nested Schema for `spec.parameters.value`
+
+Read-Only:
+
+- `dynamic_value` (Attributes) Dynamic value (see [below for nested schema](#nestedatt--spec--parameters--value--dynamic_value))
+- `static_value` (String) Static value
+
+<a id="nestedatt--spec--parameters--value--dynamic_value"></a>
+### Nested Schema for `spec.parameters.value.dynamic_value`
+
+Read-Only:
+
+- `field` (String) Field to add to the dynamic value
+- `path` (String) Path to the EDB table to watch
+- `where` (String) Where clause to filter the results
+
+
+
 
 
 <a id="nestedatt--status"></a>

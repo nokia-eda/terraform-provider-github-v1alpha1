@@ -31,10 +31,6 @@ description: |-
 <a id="nestedatt--items"></a>
 ### Nested Schema for `items`
 
-Optional:
-
-- `spec` (Attributes) spec defines the desired state of ClusterGitHubInstance (see [below for nested schema](#nestedatt--items--spec))
-
 Read-Only:
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--items--alarms))
@@ -42,25 +38,8 @@ Read-Only:
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--items--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--items--metadata))
+- `spec` (Attributes) spec defines the desired state of ClusterGitHubInstance (see [below for nested schema](#nestedatt--items--spec))
 - `status` (Attributes) status defines the observed state of ClusterGitHubInstance (see [below for nested schema](#nestedatt--items--status))
-
-<a id="nestedatt--items--spec"></a>
-### Nested Schema for `items.spec`
-
-Optional:
-
-- `api_base_url` (String) Base URL for the Github API. Leave empty for the public Github API base URL.
-- `auth_secret_ref` (Attributes) Reference to the secret containing the Github token. (see [below for nested schema](#nestedatt--items--spec--auth_secret_ref))
-
-<a id="nestedatt--items--spec--auth_secret_ref"></a>
-### Nested Schema for `items.spec.auth_secret_ref`
-
-Optional:
-
-- `key` (String) Credentials key in the secret.
-- `name` (String) Secret Name containing the credentials.
-
-
 
 <a id="nestedatt--items--alarms"></a>
 ### Nested Schema for `items.alarms`
@@ -90,6 +69,24 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--items--spec"></a>
+### Nested Schema for `items.spec`
+
+Read-Only:
+
+- `api_base_url` (String) Base URL for the Github API. Leave empty for the public Github API base URL.
+- `auth_secret_ref` (Attributes) Reference to the secret containing the Github token. (see [below for nested schema](#nestedatt--items--spec--auth_secret_ref))
+
+<a id="nestedatt--items--spec--auth_secret_ref"></a>
+### Nested Schema for `items.spec.auth_secret_ref`
+
+Read-Only:
+
+- `key` (String) Credentials key in the secret.
+- `name` (String) Secret Name containing the credentials.
+
 
 
 <a id="nestedatt--items--status"></a>

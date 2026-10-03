@@ -126,11 +126,13 @@ func CreateGithubIssueResourceSchema(ctx context.Context) schema.Schema {
 				Attributes: map[string]schema.Attribute{
 					"cluster_instance": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Cluster level Github instance name.",
 						MarkdownDescription: "Cluster level Github instance name.",
 					},
 					"instance": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Github instance name.",
 						MarkdownDescription: "Github instance name.",
 					},
@@ -139,27 +141,32 @@ func CreateGithubIssueResourceSchema(ctx context.Context) schema.Schema {
 							"assignees": schema.ListAttribute{
 								ElementType:         types.StringType,
 								Optional:            true,
+								Computed:            true,
 								Description:         "Assignees of the issue.",
 								MarkdownDescription: "Assignees of the issue.",
 							},
 							"body": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "Body of the issue.",
 								MarkdownDescription: "Body of the issue.",
 							},
 							"labels": schema.ListAttribute{
 								ElementType:         types.StringType,
 								Optional:            true,
+								Computed:            true,
 								Description:         "Labels of the issue.",
 								MarkdownDescription: "Labels of the issue.",
 							},
 							"milestone": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "Milestone of the issue.",
 								MarkdownDescription: "Milestone of the issue.",
 							},
 							"title": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "Title of the issue.",
 								MarkdownDescription: "Title of the issue.",
 							},
@@ -170,11 +177,13 @@ func CreateGithubIssueResourceSchema(ctx context.Context) schema.Schema {
 							},
 						},
 						Optional:            true,
+						Computed:            true,
 						Description:         "Issue to create.",
 						MarkdownDescription: "Issue to create.",
 					},
 					"repo": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Repository to create the issue.",
 						MarkdownDescription: "Repository to create the issue.",
 					},

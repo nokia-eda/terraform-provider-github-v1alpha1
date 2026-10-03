@@ -122,6 +122,7 @@ func ClusterGitHubInstanceResourceSchema(ctx context.Context) schema.Schema {
 				Attributes: map[string]schema.Attribute{
 					"api_base_url": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Base URL for the Github API. Leave empty for the public Github API base URL.",
 						MarkdownDescription: "Base URL for the Github API. Leave empty for the public Github API base URL.",
 					},
@@ -129,11 +130,13 @@ func ClusterGitHubInstanceResourceSchema(ctx context.Context) schema.Schema {
 						Attributes: map[string]schema.Attribute{
 							"key": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "Credentials key in the secret.",
 								MarkdownDescription: "Credentials key in the secret.",
 							},
 							"name": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "Secret Name containing the credentials.",
 								MarkdownDescription: "Secret Name containing the credentials.",
 							},

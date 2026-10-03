@@ -97,19 +97,19 @@ func ClusterGitHubInstanceDataSourceSchema(ctx context.Context) schema.Schema {
 			"spec": schema.SingleNestedAttribute{
 				Attributes: map[string]schema.Attribute{
 					"api_base_url": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Base URL for the Github API. Leave empty for the public Github API base URL.",
 						MarkdownDescription: "Base URL for the Github API. Leave empty for the public Github API base URL.",
 					},
 					"auth_secret_ref": schema.SingleNestedAttribute{
 						Attributes: map[string]schema.Attribute{
 							"key": schema.StringAttribute{
-								Optional:            true,
+								Computed:            true,
 								Description:         "Credentials key in the secret.",
 								MarkdownDescription: "Credentials key in the secret.",
 							},
 							"name": schema.StringAttribute{
-								Optional:            true,
+								Computed:            true,
 								Description:         "Secret Name containing the credentials.",
 								MarkdownDescription: "Secret Name containing the credentials.",
 							},
@@ -119,7 +119,7 @@ func ClusterGitHubInstanceDataSourceSchema(ctx context.Context) schema.Schema {
 								AttrTypes: AuthSecretRefValue{}.AttributeTypes(ctx),
 							},
 						},
-						Optional:            true,
+						Computed:            true,
 						Description:         "Reference to the secret containing the Github token.",
 						MarkdownDescription: "Reference to the secret containing the Github token.",
 					},
@@ -129,7 +129,7 @@ func ClusterGitHubInstanceDataSourceSchema(ctx context.Context) schema.Schema {
 						AttrTypes: SpecValue{}.AttributeTypes(ctx),
 					},
 				},
-				Optional:            true,
+				Computed:            true,
 				Description:         "spec defines the desired state of ClusterGitHubInstance",
 				MarkdownDescription: "spec defines the desired state of ClusterGitHubInstance",
 			},

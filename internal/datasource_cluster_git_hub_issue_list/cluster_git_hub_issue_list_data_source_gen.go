@@ -104,12 +104,12 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 						"spec": schema.SingleNestedAttribute{
 							Attributes: map[string]schema.Attribute{
 								"close_on_resolve": schema.BoolAttribute{
-									Optional:            true,
+									Computed:            true,
 									Description:         "Close the issue on resolve.",
 									MarkdownDescription: "Close the issue on resolve.",
 								},
 								"instance": schema.StringAttribute{
-									Optional:            true,
+									Computed:            true,
 									Description:         "Github instance name.",
 									MarkdownDescription: "Github instance name.",
 								},
@@ -117,28 +117,28 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 									Attributes: map[string]schema.Attribute{
 										"assignees": schema.ListAttribute{
 											ElementType:         types.StringType,
-											Optional:            true,
+											Computed:            true,
 											Description:         "Assignees of the issue.",
 											MarkdownDescription: "Assignees of the issue.",
 										},
 										"body": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "Body of the issue.",
 											MarkdownDescription: "Body of the issue.",
 										},
 										"labels": schema.ListAttribute{
 											ElementType:         types.StringType,
-											Optional:            true,
+											Computed:            true,
 											Description:         "Labels of the issue.",
 											MarkdownDescription: "Labels of the issue.",
 										},
 										"milestone": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "Milestone of the issue.",
 											MarkdownDescription: "Milestone of the issue.",
 										},
 										"title": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "Title of the issue.",
 											MarkdownDescription: "Title of the issue.",
 										},
@@ -148,12 +148,12 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 											AttrTypes: IssueValue{}.AttributeTypes(ctx),
 										},
 									},
-									Optional:            true,
+									Computed:            true,
 									Description:         "Issue to create.",
 									MarkdownDescription: "Issue to create.",
 								},
 								"repo": schema.StringAttribute{
-									Optional:            true,
+									Computed:            true,
 									Description:         "Repository to create the issue.",
 									MarkdownDescription: "Repository to create the issue.",
 								},
@@ -163,19 +163,19 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 											Attributes: map[string]schema.Attribute{
 												"exclude": schema.ListAttribute{
 													ElementType:         types.StringType,
-													Optional:            true,
+													Computed:            true,
 													Description:         "Excluded alarm types that don't trigger the workflow",
 													MarkdownDescription: "Excluded alarm types that don't trigger the workflow",
 												},
 												"include": schema.ListAttribute{
 													ElementType:         types.StringType,
-													Optional:            true,
+													Computed:            true,
 													Description:         "Included alarm types that trigger the workflow",
 													MarkdownDescription: "Included alarm types that trigger the workflow",
 												},
 												"namespaces": schema.ListAttribute{
 													ElementType:         types.StringType,
-													Optional:            true,
+													Computed:            true,
 													Description:         "Namespaces to watch for alarms",
 													MarkdownDescription: "Namespaces to watch for alarms",
 												},
@@ -185,7 +185,7 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 													AttrTypes: AlarmValue{}.AttributeTypes(ctx),
 												},
 											},
-											Optional:            true,
+											Computed:            true,
 											Description:         "Alarm to trigger the workflow",
 											MarkdownDescription: "Alarm to trigger the workflow",
 										},
@@ -193,17 +193,17 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 											Attributes: map[string]schema.Attribute{
 												"fields": schema.ListAttribute{
 													ElementType:         types.StringType,
-													Optional:            true,
+													Computed:            true,
 													Description:         "List of fields to watch",
 													MarkdownDescription: "List of fields to watch",
 												},
 												"path": schema.StringAttribute{
-													Optional:            true,
+													Computed:            true,
 													Description:         "Path to the EDB table to watch",
 													MarkdownDescription: "Path to the EDB table to watch",
 												},
 												"where": schema.StringAttribute{
-													Optional:            true,
+													Computed:            true,
 													Description:         "Where clause to filter the results",
 													MarkdownDescription: "Where clause to filter the results",
 												},
@@ -213,7 +213,7 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 													AttrTypes: QueryValue{}.AttributeTypes(ctx),
 												},
 											},
-											Optional:            true,
+											Computed:            true,
 											Description:         "Query to trigger the workflow",
 											MarkdownDescription: "Query to trigger the workflow",
 										},
@@ -223,7 +223,7 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 											AttrTypes: TriggerValue{}.AttributeTypes(ctx),
 										},
 									},
-									Optional:            true,
+									Computed:            true,
 									Description:         "Trigger conditions to create the issue.",
 									MarkdownDescription: "Trigger conditions to create the issue.",
 								},
@@ -233,7 +233,7 @@ func ClusterGitHubIssueListDataSourceSchema(ctx context.Context) schema.Schema {
 									AttrTypes: SpecValue{}.AttributeTypes(ctx),
 								},
 							},
-							Optional:            true,
+							Computed:            true,
 							Description:         "spec defines the desired state of ClusterGitHubIssue",
 							MarkdownDescription: "spec defines the desired state of ClusterGitHubIssue",
 						},

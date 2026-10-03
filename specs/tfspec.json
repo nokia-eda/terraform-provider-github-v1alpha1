@@ -184,56 +184,56 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "parameters",
                                     "list_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "nested_object": {
                                             "attributes": [
                                                 {
                                                     "name": "name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Parameter name"
                                                     }
                                                 },
                                                 {
                                                     "name": "value",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "dynamic_value",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "field",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Field to add to the dynamic value"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -244,7 +244,7 @@
                                                             {
                                                                 "name": "static_value",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Static value"
                                                                 }
                                                             }
@@ -260,31 +260,31 @@
                                 {
                                     "name": "ref",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Repository to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -294,7 +294,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -304,7 +304,7 @@
                                                         {
                                                             "name": "namespaces",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -318,12 +318,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -333,14 +333,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -355,7 +355,7 @@
                                 {
                                     "name": "workflow",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Workflow to run"
                                     }
                                 }
@@ -516,56 +516,56 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "parameters",
                                                     "list_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "nested_object": {
                                                             "attributes": [
                                                                 {
                                                                     "name": "name",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "Parameter name"
                                                                     }
                                                                 },
                                                                 {
                                                                     "name": "value",
                                                                     "single_nested": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "attributes": [
                                                                             {
                                                                                 "name": "dynamic_value",
                                                                                 "single_nested": {
-                                                                                    "computed_optional_required": "optional",
+                                                                                    "computed_optional_required": "computed",
                                                                                     "attributes": [
                                                                                         {
                                                                                             "name": "field",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Field to add to the dynamic value"
                                                                                             }
                                                                                         },
                                                                                         {
                                                                                             "name": "path",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Path to the EDB table to watch"
                                                                                             }
                                                                                         },
                                                                                         {
                                                                                             "name": "where",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Where clause to filter the results"
                                                                                             }
                                                                                         }
@@ -576,7 +576,7 @@
                                                                             {
                                                                                 "name": "static_value",
                                                                                 "string": {
-                                                                                    "computed_optional_required": "optional",
+                                                                                    "computed_optional_required": "computed",
                                                                                     "description": "Static value"
                                                                                 }
                                                                             }
@@ -592,31 +592,31 @@
                                                 {
                                                     "name": "ref",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                                     }
                                                 },
                                                 {
                                                     "name": "repo",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Repository to run the workflow."
                                                     }
                                                 },
                                                 {
                                                     "name": "trigger",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "alarm",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "exclude",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -626,7 +626,7 @@
                                                                         {
                                                                             "name": "include",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -636,7 +636,7 @@
                                                                         {
                                                                             "name": "namespaces",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -650,12 +650,12 @@
                                                             {
                                                                 "name": "query",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "fields",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -665,14 +665,14 @@
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -687,7 +687,7 @@
                                                 {
                                                     "name": "workflow",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Workflow to run"
                                                     }
                                                 }
@@ -832,31 +832,31 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "api_base_url",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Base URL for the Github API. Leave empty for the public Github API base URL."
                                     }
                                 },
                                 {
                                     "name": "auth_secret_ref",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "key",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Credentials key in the secret."
                                                 }
                                             },
                                             {
                                                 "name": "name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Secret Name containing the credentials."
                                                 }
                                             }
@@ -1044,31 +1044,31 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "api_base_url",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Base URL for the Github API. Leave empty for the public Github API base URL."
                                                     }
                                                 },
                                                 {
                                                     "name": "auth_secret_ref",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "key",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Credentials key in the secret."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "name",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Secret Name containing the credentials."
                                                                 }
                                                             }
@@ -1240,31 +1240,31 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "close_on_resolve",
                                     "bool": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Close the issue on resolve."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "issue",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "assignees",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -1274,14 +1274,14 @@
                                             {
                                                 "name": "body",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Body of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "labels",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -1291,14 +1291,14 @@
                                             {
                                                 "name": "milestone",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Milestone of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "title",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Title of the issue."
                                                 }
                                             }
@@ -1309,24 +1309,24 @@
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Repository to create the issue."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -1336,7 +1336,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -1346,7 +1346,7 @@
                                                         {
                                                             "name": "namespaces",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -1360,12 +1360,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -1375,14 +1375,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -1551,31 +1551,31 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "close_on_resolve",
                                                     "bool": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Close the issue on resolve."
                                                     }
                                                 },
                                                 {
                                                     "name": "instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "issue",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "assignees",
                                                                 "list": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "element_type": {
                                                                         "string": {}
                                                                     },
@@ -1585,14 +1585,14 @@
                                                             {
                                                                 "name": "body",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Body of the issue."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "labels",
                                                                 "list": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "element_type": {
                                                                         "string": {}
                                                                     },
@@ -1602,14 +1602,14 @@
                                                             {
                                                                 "name": "milestone",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Milestone of the issue."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "title",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Title of the issue."
                                                                 }
                                                             }
@@ -1620,24 +1620,24 @@
                                                 {
                                                     "name": "repo",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Repository to create the issue."
                                                     }
                                                 },
                                                 {
                                                     "name": "trigger",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "alarm",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "exclude",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -1647,7 +1647,7 @@
                                                                         {
                                                                             "name": "include",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -1657,7 +1657,7 @@
                                                                         {
                                                                             "name": "namespaces",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -1671,12 +1671,12 @@
                                                             {
                                                                 "name": "query",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "fields",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -1686,14 +1686,14 @@
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -1846,31 +1846,31 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "cluster_instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Cluster level Github instance name."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "issue",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "assignees",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -1880,14 +1880,14 @@
                                             {
                                                 "name": "body",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Body of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "labels",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -1897,14 +1897,14 @@
                                             {
                                                 "name": "milestone",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Milestone of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "title",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Title of the issue."
                                                 }
                                             }
@@ -1915,7 +1915,7 @@
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Repository to create the issue."
                                     }
                                 }
@@ -2083,31 +2083,31 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "cluster_instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Cluster level Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "issue",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "assignees",
                                                                 "list": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "element_type": {
                                                                         "string": {}
                                                                     },
@@ -2117,14 +2117,14 @@
                                                             {
                                                                 "name": "body",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Body of the issue."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "labels",
                                                                 "list": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "element_type": {
                                                                         "string": {}
                                                                     },
@@ -2134,14 +2134,14 @@
                                                             {
                                                                 "name": "milestone",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Milestone of the issue."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "title",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Title of the issue."
                                                                 }
                                                             }
@@ -2152,7 +2152,7 @@
                                                 {
                                                     "name": "repo",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Repository to create the issue."
                                                     }
                                                 }
@@ -2304,56 +2304,56 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "parameters",
                                     "list_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "nested_object": {
                                             "attributes": [
                                                 {
                                                     "name": "name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Parameter name"
                                                     }
                                                 },
                                                 {
                                                     "name": "value",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "dynamic_value",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "field",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Field to add to the dynamic value"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -2364,7 +2364,7 @@
                                                             {
                                                                 "name": "static_value",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Static value"
                                                                 }
                                                             }
@@ -2380,31 +2380,31 @@
                                 {
                                     "name": "ref",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Repository to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -2414,7 +2414,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -2428,12 +2428,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -2443,14 +2443,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -2465,7 +2465,7 @@
                                 {
                                     "name": "workflow",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Workflow to run"
                                     }
                                 }
@@ -2633,56 +2633,56 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "parameters",
                                                     "list_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "nested_object": {
                                                             "attributes": [
                                                                 {
                                                                     "name": "name",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "Parameter name"
                                                                     }
                                                                 },
                                                                 {
                                                                     "name": "value",
                                                                     "single_nested": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "attributes": [
                                                                             {
                                                                                 "name": "dynamic_value",
                                                                                 "single_nested": {
-                                                                                    "computed_optional_required": "optional",
+                                                                                    "computed_optional_required": "computed",
                                                                                     "attributes": [
                                                                                         {
                                                                                             "name": "field",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Field to add to the dynamic value"
                                                                                             }
                                                                                         },
                                                                                         {
                                                                                             "name": "path",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Path to the EDB table to watch"
                                                                                             }
                                                                                         },
                                                                                         {
                                                                                             "name": "where",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Where clause to filter the results"
                                                                                             }
                                                                                         }
@@ -2693,7 +2693,7 @@
                                                                             {
                                                                                 "name": "static_value",
                                                                                 "string": {
-                                                                                    "computed_optional_required": "optional",
+                                                                                    "computed_optional_required": "computed",
                                                                                     "description": "Static value"
                                                                                 }
                                                                             }
@@ -2709,31 +2709,31 @@
                                                 {
                                                     "name": "ref",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                                     }
                                                 },
                                                 {
                                                     "name": "repo",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Repository to run the workflow."
                                                     }
                                                 },
                                                 {
                                                     "name": "trigger",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "alarm",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "exclude",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -2743,7 +2743,7 @@
                                                                         {
                                                                             "name": "include",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -2757,12 +2757,12 @@
                                                             {
                                                                 "name": "query",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "fields",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -2772,14 +2772,14 @@
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -2794,7 +2794,7 @@
                                                 {
                                                     "name": "workflow",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Workflow to run"
                                                     }
                                                 }
@@ -2946,31 +2946,31 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "api_base_url",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Base URL for the Github API. Leave empty for the public Github API base URL."
                                     }
                                 },
                                 {
                                     "name": "auth_secret_ref",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "key",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Credentials key in the secret."
                                                 }
                                             },
                                             {
                                                 "name": "name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Secret Name containing the credentials."
                                                 }
                                             }
@@ -3165,31 +3165,31 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "api_base_url",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Base URL for the Github API. Leave empty for the public Github API base URL."
                                                     }
                                                 },
                                                 {
                                                     "name": "auth_secret_ref",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "key",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Credentials key in the secret."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "name",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Secret Name containing the credentials."
                                                                 }
                                                             }
@@ -3368,31 +3368,31 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "close_on_resolve",
                                     "bool": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Close the issue on resolve."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "issue",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "assignees",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -3402,14 +3402,14 @@
                                             {
                                                 "name": "body",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Body of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "labels",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -3419,14 +3419,14 @@
                                             {
                                                 "name": "milestone",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Milestone of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "title",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "Title of the issue."
                                                 }
                                             }
@@ -3437,24 +3437,24 @@
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Repository to create the issue."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -3464,7 +3464,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -3478,12 +3478,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -3493,14 +3493,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -3676,31 +3676,31 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "close_on_resolve",
                                                     "bool": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Close the issue on resolve."
                                                     }
                                                 },
                                                 {
                                                     "name": "instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "issue",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "assignees",
                                                                 "list": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "element_type": {
                                                                         "string": {}
                                                                     },
@@ -3710,14 +3710,14 @@
                                                             {
                                                                 "name": "body",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Body of the issue."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "labels",
                                                                 "list": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "element_type": {
                                                                         "string": {}
                                                                     },
@@ -3727,14 +3727,14 @@
                                                             {
                                                                 "name": "milestone",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Milestone of the issue."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "title",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Title of the issue."
                                                                 }
                                                             }
@@ -3745,24 +3745,24 @@
                                                 {
                                                     "name": "repo",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Repository to create the issue."
                                                     }
                                                 },
                                                 {
                                                     "name": "trigger",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "alarm",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "exclude",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -3772,7 +3772,7 @@
                                                                         {
                                                                             "name": "include",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -3786,12 +3786,12 @@
                                                             {
                                                                 "name": "query",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "fields",
                                                                             "list": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "element_type": {
                                                                                     "string": {}
                                                                                 },
@@ -3801,14 +3801,14 @@
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -4032,63 +4032,63 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "cluster_instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Cluster level Github instance name."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "parameters",
                                     "list_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "nested_object": {
                                             "attributes": [
                                                 {
                                                     "name": "name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Parameter name"
                                                     }
                                                 },
                                                 {
                                                     "name": "value",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "dynamic_value",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "field",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Field to add to the dynamic value"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -4099,7 +4099,7 @@
                                                             {
                                                                 "name": "static_value",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "Static value"
                                                                 }
                                                             }
@@ -4115,21 +4115,21 @@
                                 {
                                     "name": "ref",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Repository to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "workflow",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Workflow to run"
                                     }
                                 }
@@ -4297,63 +4297,63 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "cluster_instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Cluster level Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "instance",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Github instance name."
                                                     }
                                                 },
                                                 {
                                                     "name": "parameters",
                                                     "list_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "nested_object": {
                                                             "attributes": [
                                                                 {
                                                                     "name": "name",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "Parameter name"
                                                                     }
                                                                 },
                                                                 {
                                                                     "name": "value",
                                                                     "single_nested": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "attributes": [
                                                                             {
                                                                                 "name": "dynamic_value",
                                                                                 "single_nested": {
-                                                                                    "computed_optional_required": "optional",
+                                                                                    "computed_optional_required": "computed",
                                                                                     "attributes": [
                                                                                         {
                                                                                             "name": "field",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Field to add to the dynamic value"
                                                                                             }
                                                                                         },
                                                                                         {
                                                                                             "name": "path",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Path to the EDB table to watch"
                                                                                             }
                                                                                         },
                                                                                         {
                                                                                             "name": "where",
                                                                                             "string": {
-                                                                                                "computed_optional_required": "optional",
+                                                                                                "computed_optional_required": "computed",
                                                                                                 "description": "Where clause to filter the results"
                                                                                             }
                                                                                         }
@@ -4364,7 +4364,7 @@
                                                                             {
                                                                                 "name": "static_value",
                                                                                 "string": {
-                                                                                    "computed_optional_required": "optional",
+                                                                                    "computed_optional_required": "computed",
                                                                                     "description": "Static value"
                                                                                 }
                                                                             }
@@ -4380,21 +4380,21 @@
                                                 {
                                                     "name": "ref",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                                     }
                                                 },
                                                 {
                                                     "name": "repo",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Repository to run the workflow."
                                                     }
                                                 },
                                                 {
                                                     "name": "workflow",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Workflow to run"
                                                     }
                                                 }
@@ -4672,51 +4672,51 @@
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "parameters",
                                     "list_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "nested_object": {
                                             "attributes": [
                                                 {
                                                     "name": "name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "description": "Parameter name"
                                                     }
                                                 },
                                                 {
                                                     "name": "value",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "attributes": [
                                                             {
                                                                 "name": "dynamic_value",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed_optional",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "field",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Field to add to the dynamic value"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -4727,7 +4727,7 @@
                                                             {
                                                                 "name": "static_value",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed_optional",
                                                                     "description": "Static value"
                                                                 }
                                                             }
@@ -4743,31 +4743,31 @@
                                 {
                                     "name": "ref",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Repository to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -4777,7 +4777,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -4787,7 +4787,7 @@
                                                         {
                                                             "name": "namespaces",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -4801,12 +4801,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -4816,14 +4816,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -4838,7 +4838,7 @@
                                 {
                                     "name": "workflow",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Workflow to run"
                                     }
                                 }
@@ -5035,7 +5035,7 @@
                                 {
                                     "name": "api_base_url",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Base URL for the Github API. Leave empty for the public Github API base URL."
                                     }
                                 },
@@ -5047,14 +5047,14 @@
                                             {
                                                 "name": "key",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Credentials key in the secret."
                                                 }
                                             },
                                             {
                                                 "name": "name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Secret Name containing the credentials."
                                                 }
                                             }
@@ -5278,26 +5278,26 @@
                                 {
                                     "name": "close_on_resolve",
                                     "bool": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Close the issue on resolve."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "issue",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "assignees",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -5307,14 +5307,14 @@
                                             {
                                                 "name": "body",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Body of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "labels",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -5324,14 +5324,14 @@
                                             {
                                                 "name": "milestone",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Milestone of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "title",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Title of the issue."
                                                 }
                                             }
@@ -5342,24 +5342,24 @@
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Repository to create the issue."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -5369,7 +5369,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -5379,7 +5379,7 @@
                                                         {
                                                             "name": "namespaces",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -5393,12 +5393,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -5408,14 +5408,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -5617,26 +5617,26 @@
                                 {
                                     "name": "cluster_instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Cluster level Github instance name."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "issue",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "assignees",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -5646,14 +5646,14 @@
                                             {
                                                 "name": "body",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Body of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "labels",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -5663,14 +5663,14 @@
                                             {
                                                 "name": "milestone",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Milestone of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "title",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Title of the issue."
                                                 }
                                             }
@@ -5681,7 +5681,7 @@
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Repository to create the issue."
                                     }
                                 }
@@ -5882,51 +5882,51 @@
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "parameters",
                                     "list_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "nested_object": {
                                             "attributes": [
                                                 {
                                                     "name": "name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "description": "Parameter name"
                                                     }
                                                 },
                                                 {
                                                     "name": "value",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "attributes": [
                                                             {
                                                                 "name": "dynamic_value",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed_optional",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "field",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Field to add to the dynamic value"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -5937,7 +5937,7 @@
                                                             {
                                                                 "name": "static_value",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed_optional",
                                                                     "description": "Static value"
                                                                 }
                                                             }
@@ -5953,31 +5953,31 @@
                                 {
                                     "name": "ref",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Repository to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -5987,7 +5987,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -6001,12 +6001,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -6016,14 +6016,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -6038,7 +6038,7 @@
                                 {
                                     "name": "workflow",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Workflow to run"
                                     }
                                 }
@@ -6239,7 +6239,7 @@
                                 {
                                     "name": "api_base_url",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Base URL for the Github API. Leave empty for the public Github API base URL."
                                     }
                                 },
@@ -6251,14 +6251,14 @@
                                             {
                                                 "name": "key",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Credentials key in the secret."
                                                 }
                                             },
                                             {
                                                 "name": "name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Secret Name containing the credentials."
                                                 }
                                             }
@@ -6486,26 +6486,26 @@
                                 {
                                     "name": "close_on_resolve",
                                     "bool": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Close the issue on resolve."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "issue",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "assignees",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -6515,14 +6515,14 @@
                                             {
                                                 "name": "body",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Body of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "labels",
                                                 "list": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "element_type": {
                                                         "string": {}
                                                     },
@@ -6532,14 +6532,14 @@
                                             {
                                                 "name": "milestone",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Milestone of the issue."
                                                 }
                                             },
                                             {
                                                 "name": "title",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "Title of the issue."
                                                 }
                                             }
@@ -6550,24 +6550,24 @@
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Repository to create the issue."
                                     }
                                 },
                                 {
                                     "name": "trigger",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "alarm",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "exclude",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -6577,7 +6577,7 @@
                                                         {
                                                             "name": "include",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -6591,12 +6591,12 @@
                                             {
                                                 "name": "query",
                                                 "single_nested": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "attributes": [
                                                         {
                                                             "name": "fields",
                                                             "list": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "element_type": {
                                                                     "string": {}
                                                                 },
@@ -6606,14 +6606,14 @@
                                                         {
                                                             "name": "path",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Path to the EDB table to watch"
                                                             }
                                                         },
                                                         {
                                                             "name": "where",
                                                             "string": {
-                                                                "computed_optional_required": "optional",
+                                                                "computed_optional_required": "computed_optional",
                                                                 "description": "Where clause to filter the results"
                                                             }
                                                         }
@@ -6822,58 +6822,58 @@
                                 {
                                     "name": "cluster_instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Cluster level Github instance name."
                                     }
                                 },
                                 {
                                     "name": "instance",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Github instance name."
                                     }
                                 },
                                 {
                                     "name": "parameters",
                                     "list_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "nested_object": {
                                             "attributes": [
                                                 {
                                                     "name": "name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "description": "Parameter name"
                                                     }
                                                 },
                                                 {
                                                     "name": "value",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "attributes": [
                                                             {
                                                                 "name": "dynamic_value",
                                                                 "single_nested": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed_optional",
                                                                     "attributes": [
                                                                         {
                                                                             "name": "field",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Field to add to the dynamic value"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "path",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Path to the EDB table to watch"
                                                                             }
                                                                         },
                                                                         {
                                                                             "name": "where",
                                                                             "string": {
-                                                                                "computed_optional_required": "optional",
+                                                                                "computed_optional_required": "computed_optional",
                                                                                 "description": "Where clause to filter the results"
                                                                             }
                                                                         }
@@ -6884,7 +6884,7 @@
                                                             {
                                                                 "name": "static_value",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed_optional",
                                                                     "description": "Static value"
                                                                 }
                                                             }
@@ -6900,21 +6900,21 @@
                                 {
                                     "name": "ref",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Reference is the branch, tag or commit hash to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "repo",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Repository to run the workflow."
                                     }
                                 },
                                 {
                                     "name": "workflow",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "Workflow to run"
                                     }
                                 }
